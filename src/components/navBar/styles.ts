@@ -14,7 +14,7 @@ export const Main = styled.div`
   align-items: center;
   position: fixed;
   width: 100%;
-  background-color: #bfbfbfd4;
+  background-color: #000000b8;
   z-index: 10;
   top: 0;
   ${space}
@@ -29,12 +29,14 @@ export const Main = styled.div`
 `;
 
 export const LogoContainer = styled.div`
-  color: #2e2e2e;
-  font-weight: bold;
   cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.4s;
 
   :hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 `;
 
@@ -68,4 +70,14 @@ export const NavContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 40px;
-`
+`;
+
+export const NavLottier = styled.div`
+  position: fixed;
+  top: -220px;
+  margin-right: 500px;
+  z-index: -1;
+  height: 1360px;
+  width: 2220px;
+  ${flexbox}
+`;

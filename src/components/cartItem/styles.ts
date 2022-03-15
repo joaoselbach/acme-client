@@ -12,29 +12,28 @@ export const ProductContainer = styled.div`
     height: 300px;
     width: 360px;
   }
-`
+`;
 
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
-export const Image = styled.div``
+export const Image = styled.div``;
 
-export const Title = styled.span` 
+export const Title = styled.span`
   font-size: 14px;
   font-weight: bold;
-`
+`;
 
 export const Description = styled.span`
   font-size: 14px;
-  
-`
+`;
 
 export const Price = styled.span`
   font-size: 16px;
   margin-top: 10px;
-`
+`;
 
 export const CardActions = styled.span`
   display: flex;
@@ -42,4 +41,4 @@ export const CardActions = styled.span`
   align-items: center;
   width: 100%;
   padding: 10px 15px;
-`
+`;

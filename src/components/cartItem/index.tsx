@@ -5,7 +5,7 @@ import { Card, CardMedia, Typography, IconButton } from "@material-ui/core";
 import { Delete } from "@material-ui/icons";
 
 import { useCart } from "~/contexts/product";
-import type { Product } from "~/contexts/product";
+import type { ProductProps } from "~/contexts/product";
 
 import {
   Container,
@@ -17,7 +17,7 @@ import {
   Price,
 } from "~/styles/styles";
 
-const CartItem = ({ ...propProduct }: Product) => {
+const CartItem = ({ ...propProduct }: ProductProps) => {
   const { cart, setCart } = useCart();
 
   function handleRemoveitem(id: number) {

@@ -1,11 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { Card, CardMedia, Typography, IconButton } from "@material-ui/core";
-import { AddShoppingCart, FavoriteBorder } from "@material-ui/icons";
+import { IconButton } from "@material-ui/core";
+import { AddShoppingCart, FavoriteBorder, Favorite } from "@material-ui/icons";
 
 import { useCart } from "~/contexts/product";
-import type { Product } from "~/contexts/product";
+import type { ProductProps } from "~/contexts/product";
 
 import {
   ProductContainer,
@@ -17,8 +17,14 @@ import {
   Icons
 } from "./styles";
 
-const ProductCard = ({ ...propProduct }: Product) => {
+const ProductCard = ({ ...propProduct }: ProductProps) => {
   const { cart, favorite, setCart, setFavorite } = useCart();
+
+  function handleFavoriteItem(id: number) {
+    const filterArray =  favorite.filter((product) => product.id !== id)
+
+    setFavorite([...filterArray, propProduct])
+  }
 
   return (
     <>
@@ -33,14 +39,12 @@ const ProductCard = ({ ...propProduct }: Product) => {
             <Price>{propProduct.formatedPrice}</Price>
           </TextContainer>
           <Icons>
-            <IconButton aria-label="Add to Cart">
-              <AddShoppingCart
-                onClick={() => setCart([...cart, propProduct])}
-              />
-            </IconButton>
             <IconButton>
-              <FavoriteBorder 
-                onClick={() => setFavorite([...favorite, propProduct])}
+              <FavoriteBorder onClick={() => handleFavoriteItem(propProduct.id)}/>
+            </IconButton>
+            <IconButton aria-label="Add to Cart">
+              <AddShoppingCart 
+                onClick={() => setCart([...cart, propProduct])}
               />
             </IconButton>
           </Icons>

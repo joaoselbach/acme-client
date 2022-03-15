@@ -9,6 +9,7 @@ export default createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    background-image: linear-gradient(to right bottom, #e1e1e1, #e0e0e0, #dedfde, #dddddd, #dcdcdc);
   }
 
   body {

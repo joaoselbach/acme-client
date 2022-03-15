@@ -60,3 +60,51 @@ export const CardActions = styled.span`
   width: 100%;
   padding: 10px 15px;
 `
+
+export const Filter = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+
+  #activeButton {
+    background-color: #2e2e2e;
+    color: #fff;
+    box-shadow: 0px 0px 20px 0px #2e2e2e;
+  }
+`
+
+export const FavoriteButton = styled.button`
+  cursor: pointer;
+  color: #2e2e2e
+  font-size: 16px;
+  font-weight: bold;
+  height: 34px;
+  width: 115px;
+  border: 1px solid #2e2e2e;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: 0.3s;
+
+  :hover {
+    background-color: #2e2e2e;
+    color: #fff;
+  }
+`
+
+export const ProductButton = styled.button`
+  cursor: pointer;
+  color: #2e2e2e
+  font-size: 16px;
+  font-weight: bold;
+  height: 34px;
+  width: 140px;
+  border: 1px solid #2e2e2e;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: 0.3s;
+
+  :hover {
+    background-color: #2e2e2e;
+    color: #fff;
+  }
+`

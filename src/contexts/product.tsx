@@ -1,21 +1,22 @@
 import { createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
 import api from "~/services/api";
 
-export type Product = {
+export type ProductProps = {
     id: number;
     name: string;
     description: string;
     price: number;
     formatedPrice: string;
     image: string;
+    largeImage: string;
 }
 
 type ProductState = {
-    products: Product[];
-    cart: Product[];
-    favorite: Product[];
-    setCart: Dispatch<SetStateAction<Product[]>>
-    setFavorite: Dispatch<SetStateAction<Product[]>>
+    products: ProductProps[];
+    cart: ProductProps[];
+    favorite: ProductProps[];
+    setCart: Dispatch<SetStateAction<ProductProps[]>>
+    setFavorite: Dispatch<SetStateAction<ProductProps[]>>
 }
 
 type ProductProviderProps = {
@@ -25,9 +26,9 @@ type ProductProviderProps = {
 const ProductContext = createContext({} as ProductState);
 
 export function ProductProvider({ children }: ProductProviderProps) {
-    const [products, setProducts] = useState<Product[]>([]);
-    const [cart, setCart] = useState<Product[]>([]);
-    const [favorite, setFavorite] = useState<Product[]>([]);
+    const [products, setProducts] = useState<ProductProps[]>([]);
+    const [cart, setCart] = useState<ProductProps[]>([]);
+    const [favorite, setFavorite] = useState<ProductProps[]>([]);
     
     useEffect(() => {
         handleGetUserData();

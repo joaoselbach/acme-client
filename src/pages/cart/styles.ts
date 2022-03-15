@@ -60,3 +60,18 @@ export const CardActions = styled.span`
   width: 100%;
   padding: 10px 15px;
 `
+
+export const Subtotal = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const Buttons = styled.div`
+  display: flex;
+  gap: 20px;
+
+  button {
+    width: 160px;
+  }
+`
